@@ -20,12 +20,12 @@ const GameBoard = () => {
 
         if(alignment === "v"){
             if(i + ship.length > 10){
-                return;
+                return false;
             }
             ship.id = ships.length
             for(let k = i; k < i + ship.length; ++k){
                 if(board[k][j] != '*'){
-                    return;
+                    return false;
                 }
             }
             for(let k = i; k < i + ship.length; ++k){
@@ -34,12 +34,12 @@ const GameBoard = () => {
         }
         else if(alignment === "h"){
             if(j + ship.length > 10){
-                return;
+                return false;
             }
             ship.id = ships.length
             for(let k = j; k < j + ship.length; ++k){
                 if(board[i][k] != '*'){
-                    return;
+                    return false;
                 }
             }
             for(let k = j; k < j + ship.length; ++k){
@@ -47,6 +47,7 @@ const GameBoard = () => {
             }
         }
         ships.push(ship);
+        return true;
     };
     const receiveAttack = (row, col) => {
         if(board[row][col] == "H" || board[row][col] == "M"){
