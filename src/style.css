@@ -3,8 +3,14 @@
 }
 body{
     /* background-color: aqua; */
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: aliceblue;
 }
 
+h1{
+    font-size: 60px;
+}
 .row{
     display: flex;
 }
@@ -21,4 +27,14 @@ body{
 .boards{
     display: flex;
     gap: 45px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+button{
+    border-radius: 40px;
+    font-size: 21px;
+    padding: 20px;
+    background-color: beige;
 }
