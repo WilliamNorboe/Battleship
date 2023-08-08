@@ -9,7 +9,7 @@ function removeAllChildNodes(parent) {
 function renderBoards(human, ai) {
   let playerboard = document.createElement("div");
   playerboard.id = "playerboard";
-  playerboard.textContent = "Your Boats - Number Sunk = " + human.gameboard.shipsSunk;
+  // playerboard.textContent = "Your Boats - Number Sunk = " + human.gameboard.shipsSunk;
   let aiboard = document.createElement("div");
   aiboard.id = "aiboard";
   aiboard.textContent = "Opponents Boats - Number Sunk = " + ai.gameboard.shipsSunk;
@@ -75,6 +75,9 @@ function renderBoards(human, ai) {
     }
     aiboard.appendChild(row);
   }
+  let test = document.createElement("div");
+  test.textContent = "Your Boats - Number Sunk = " + human.gameboard.shipsSunk;
+  playerboard.prepend(test);
   boards.appendChild(playerboard);
   boards.appendChild(aiboard);
 }
