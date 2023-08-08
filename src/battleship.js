@@ -9,10 +9,10 @@ function removeAllChildNodes(parent) {
 function renderBoards(human, ai) {
   let playerboard = document.createElement("div");
   playerboard.id = "playerboard";
-  playerboard.textContent = "Your Boats";
+  playerboard.textContent = "Your Boats - Number Sunk = " + human.gameboard.shipsSunk;
   let aiboard = document.createElement("div");
   aiboard.id = "aiboard";
-  aiboard.textContent = "Opponents Boats";
+  aiboard.textContent = "Opponents Boats - Number Sunk = " + ai.gameboard.shipsSunk;
 
   if (ai.gameboard.allSunk()) {
     document.querySelector("#result").textContent = "Player 1 Win";

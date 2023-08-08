@@ -82,6 +82,9 @@ const GameBoard = () => {
     receiveAttack,
     ships,
     allSunk,
+    get shipsSunk() {
+      return shipsSunk;
+    },
   };
 };
 
