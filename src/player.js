@@ -16,19 +16,22 @@ const Player = (ai) => {
           j = hit[1];
           let pattern = /^[0-9*]*$/;
           if(i-1 >= 0 && opponent.gameboard.board[i-1][j].match(pattern)){
-            opponent.gameboard.receiveAttack(i-1, j);
-            return;
+            i--;
           }
           else if(i+1 <= 9 && opponent.gameboard.board[i+1][j].match(pattern)){
-            opponent.gameboard.receiveAttack(i+1, j);
-            return;
+            i++;
           }
           else if(j+1 <= 9 && opponent.gameboard.board[i][j+1].match(pattern)){
-            opponent.gameboard.receiveAttack(i, j+1);
-            return;
+            j++; 
           }
           else if(j-1 >= 0 && opponent.gameboard.board[i][j-1].match(pattern)){
-            opponent.gameboard.receiveAttack(i, j-1);
+            j--;
+          }
+          if((i != hit[0] || j != hit[1])){
+            opponent.gameboard.receiveAttack(i, j);
+            if(opponent.gameboard.board[i][j] == "H"){
+              hit = [i, j]
+            }
             return;
           }
           hit = false;
