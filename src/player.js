@@ -5,9 +5,8 @@ const Player = (ai) => {
   let turn = false;
   let hit = false;
   const attack = (opponent, id) => {
-    // console.log(id);
     if (turn) {
-      if (ai) {
+      if (ai) { // for ai opponent attack
         let i = -1;
         let j = -1;
         turn = false;

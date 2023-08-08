@@ -32,6 +32,12 @@ function renderBoards(human, ai) {
       square.classList.add("square");
       square.id = "hsquare" + String(i) + String(j);
       square.textContent = human.gameboard.board[i][j];
+      if(square.textContent == "H"){
+        square.style.backgroundColor = "red";
+      }
+      else if(square.textContent == "M"){
+        square.style.backgroundColor = "blue";
+      }
       row.appendChild(square);
     }
     playerboard.appendChild(row);
@@ -53,6 +59,12 @@ function renderBoards(human, ai) {
         square.textContent = "*";
       } else {
         square.textContent = ai.gameboard.board[i][j];
+        if(square.textContent == "H"){
+          square.style.backgroundColor = "red";
+        }
+        else if(square.textContent == "M"){
+          square.style.backgroundColor = "blue";
+        }
       }
       square.addEventListener("click", () => {
         human.attack(ai, square.id);
