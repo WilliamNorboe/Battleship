@@ -60,6 +60,12 @@ function renderBoards(human, ai) {
         ai.gameboard.board[i][j] != "M"
       ) {
         square.textContent = "*";
+          square.addEventListener("mouseover", () =>
+            {square.style.backgroundColor = "green";}
+          );
+          square.addEventListener("mouseout", () =>
+            {square.style.backgroundColor = "white";}
+          );
       } else {
         square.textContent = ai.gameboard.board[i][j];
         if(square.textContent == "H"){
