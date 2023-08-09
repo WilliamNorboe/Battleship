@@ -38,6 +38,9 @@ function renderBoards(human, ai) {
       else if(square.textContent == "M"){
         square.style.backgroundColor = "blue";
       }
+      else if(/\d/.test(square.textContent)){
+        square.style.backgroundColor = "#66FF99";
+      }
       row.appendChild(square);
     }
     playerboard.appendChild(row);
@@ -64,6 +67,14 @@ function renderBoards(human, ai) {
         }
         else if(square.textContent == "M"){
           square.style.backgroundColor = "blue";
+        }
+        else{
+          square.addEventListener("mouseover", () =>
+          {square.style.backgroundColor = "green";}
+         );
+         square.addEventListener("mouseout", () =>
+           {square.style.backgroundColor = "white";}
+         );
         }
       }
       square.addEventListener("click", () => {
